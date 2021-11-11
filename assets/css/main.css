@@ -13810,6 +13810,17 @@ button:hover {
     font-size: 1.4rem
 }
 
+#LoginForm h5.title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    font-size: 1.4rem
+}
+
 #LoginForm h5.title img {
     height: 50px
 }
@@ -13832,6 +13843,16 @@ button:hover {
 #LoginForm .pin {
     position: relative
 }
+
+@media(max-width:575px) {
+    #LoginForm .card {
+    width: 98%;
+}
+    #LoginForm .card-body {
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.7rem;
+ }
 
 @media(max-width:375px) {
     #LoginForm .card {
