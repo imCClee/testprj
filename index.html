@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>臺灣鐵路-邊坡全生命週期預警及維護管理系統</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.css">
+<link href="assets/css/index.css" rel="stylesheet">
+<link rel="shortcut icon" href="assets/img/TR-Logo.png" type="image/x-icon">
+<link rel="icon" href="assets/img/TR-Logo.png" type="image/x-icon">
+</head>
+
+<body id="index">
+    <div class="logo-bar d-none d-md-block d-lg-block bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo d-none d-lg-block">
+                        <a class="navbar-brand js-scroll-trigger" href="#"><h1>
+                        <img src="assets/img/TR-Logo.png" id="index" class="logo">邊坡全生命週期預警及維護管理系統</h1></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- start nav-->
+    <div class="main-navigation menu-2" id="mainmenu-area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable rounded-radius">
+
+                <a class="navbar-brand d-lg-none d-block" href="">
+                    <h5>邊坡全生命週期預警及維護管理系統</h5>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <div class="navbar-collapse py-2 collapse" id="navbarCollapse" style="">
+                    <ul id="index" class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/Public/FileDownload">
+                                <i class="fa fa-file-download"></i>相關文件下載
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/Public/AreaPic/Detail">
+                                <i class="fa fa-compass"></i>工務處轄管範圍
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/Public/Bulletin">
+                                <i class="fa fa-compass"></i>最新公告
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/Public/MessageBoard">
+                                <i class="fa fa-compass"></i>留言板
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/Management/User">
+                                <i class="fa fa-users"></i>系統管理
+                            </a>
+                        </li>
+                       <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="Public/SiteMap.html">
+                                <i class="fas fa-binoculars mr-1"></i>網站導覽
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div> 
+    </div>
+    <!-- end nav-->
+<section class="section" id="systems">
+        <div class="container">
+             <!-- start 系統總覽 -->
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='#';">
+                    <div class="system-block">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>GIS圖台</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='slope/index.html';">
+                    <div class="system-block">
+                        <span class="icon-slope"></span>
+                        <h4>邊坡系統</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='#';">
+                    <div class="system-block">
+                        <span class="icon-alart"></span>
+                        <h4>預警監視系統</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='track/index.html';">
+                    <div class="system-block">
+                        <span class="icon-track"></span>
+                        <h4>巡軌系統</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='temperature/index.html';">
+                    <div class="system-block">
+                        <span class="icon-thermometer"></span>
+                        <h4>軌溫監控系統</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='#';">
+                    <div class="system-block">
+                        <span class="icon-bridge"></span>
+                        <h4>橋樑管理系統</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-4 mb-30" onclick="location.href='#';">
+                    <div class="system-block">
+                        <span class="icon-tunnel"></span>
+                        <h4>隧道管理系統</h4>
+                    </div>
+                </div>
+            </div>
+               <!-- end 系統總覽 -->
+            </div>            
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container justify-content-center table-responsive">
+            <h2 class="pt-2 pb-4 text-center"><i class="fa fa-book"></i>最新公告</h2>
+            <!-- table -->
+            <table id="dataTable" class="table table-bordered nowrap " width="100%" cellspacing="0">
+                <thead class="thead-light font-weight-bolder">
+                    <tr>
+                        <th>公告單位</th>
+                        <th>公告標題</th>
+                        <th>公告日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台東段影像模組功能恢復</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台中段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/08/07下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>花蓮段影像模組功能異常</td>
+                        <td>107/07/05</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台中段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/12/01下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>花蓮段影像模組功能恢復</td>
+                        <td>107/07/11</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>宜蘭段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/10/01下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>所有系統維護暫停服務</td>
+                        <td>108/03/25</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台東段影像模組功能恢復</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台中段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/08/07下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>花蓮段影像模組功能異常</td>
+                        <td>107/07/05</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>台中段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/12/01下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>花蓮段影像模組功能恢復</td>
+                        <td>107/07/11</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>宜蘭段影像模組暫時不提供服務</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>109/10/01下午13:00進行系統維護作業</td>
+                        <td>109/04/15</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#announcement">
+                        <td>工務處</td>
+                        <td>所有系統維護暫停服務</td>
+                        <td>108/03/25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>                       
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row text-center py-4">
+                <div class="col-lg-12">
+                &copy; Copyright <a href="#" class="current-year">中華民國台灣鐵路局</a>  版權所有 ｜ 服務電話：02-0000-0000 ｜地址：00000 台北市0000路0000000號
+                </div>
+            </div> 
+        </div> 
+    </footer>
+    <a id="gotop" class="scroll-to-top js-scroll-trigger" href="#top-header">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+<!-- start Modal -->
+<div class="modal fade" id="announcement" tabindex="-1" aria-labelledby="announcementLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="announcementLabel">公告的標題文字</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row border-bottom px-3">
+        <div class="col-6 mb-2 text-primary">公告單位：ＯＯ處</div>
+        <div class="col-6 mb-2 text-right text-primary">公告日期：yyy/mm/dd</div>
+        <hr>
+        </div>
+        <div class="p-2 mt-2">
+            公告內容公告內容公告內容公告內容，公告內容公告內容公告內容公告內容公告內容。
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/demo/datatables-set.js"></script>
+
+    <script src="assets/js/index.js"></script>
+ 
+  </body>
+  </html>
+   
+   

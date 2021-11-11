@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>臺灣鐵路-邊坡系統</title>
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <!-- Shortcut icon -->
+    <link rel="shortcut icon" href="../assets/img/TR-Logo.png" type="image/x-icon">
+    <link rel="icon" href="../assets/img/TR-Logo.png" type="image/x-icon">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <img src="../assets/img/TR-Logo.png" class="logo" height="38px">
+                </div>
+                <div class="sidebar-brand-text mx-1">臺灣鐵路</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>全系統首頁</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                邊坡維護管理系統
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                <i class="sidebar-track"></i>
+                    <span>巡軌系統</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                   <i class="sidebar-thermometer"></i>
+                    <span>軌溫系統</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="sidebar-slope"></i>
+                    <span>邊坡系統</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="sidebar-gis"></i>
+                    <span>GIS系統</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="sidebar-tunnel"></i>
+                    <span>隧道系統</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="sidebar-bridge"></i>
+                    <span>橋樑系統</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <nav class="navbar navbar-expand navbar-light topbar bg-gradient-primary text-white shadow static-top">
+                    <h4 class="mt-2"><img src="../assets/img/TR-Logo-white.png" class="logo no-arrow d-sm-none mr-2" height="28px;">邊坡系統</h4>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow d-sm-none mx-1">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-home fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow mr-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    待辦通知
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">March 12, 2021</div>
+                                        <span class="font-weight-bold">逾期未填寫巡查表單</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-file-upload text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">March 7, 2021</div>
+                                        逾一個月未上傳監測資料
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-danger">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">March 2, 2021</div>
+                                        有巡查缺失尚未處置
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">顯示所有代辦</a>
+                            </div>
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline small">鄧傑森,台北公務處</span>
+                                <i class="fas fa-user-circle fa-md"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    個人資料維護
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    更改密碼
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    登出
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- start nav-->
+                <nav class="navbar navbar-expand-lg bg-white navbar-togglable shadow mb-2">
+                    <div class="container-fluid">
+                        <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-bars mr-2"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="sys nav-item">
+                                    <a href="index.html
+                                     " class="nav-link js-scroll-trigger mx-2 px-2">
+                                        首頁
+                                    </a>
+                                </li>
+                                <li class="sys nav-item dropdown no-arrow">
+                                    <a class="nav-link" href="#">
+                                        總覽
+                                    </a>
+                                </li>
+                                <li class="sys nav-item">
+                                    <a href="" class="nav-link mx-2 px-2">
+                                        邊坡評估分級
+                                    </a>
+                                </li>
+                                <li class="sys nav-item">
+                                    <a class="nav-link" href="#">
+                                        工程管理
+                                    </a>
+                                </li>
+                                <li class="sys nav-item ">
+                                    <a href="" class="nav-link mx-2 px-2">
+                                        災害管理
+                                    </a>
+                                </li>
+                                <li class="sys nav-item">
+                                    <a href="" class="nav-link mx-2 px-2">
+                                        統計分析
+                                    </a>
+                                </li>
+                                <li class="sys nav-item">
+                                    <a href="" class="nav-link mx-2 px-2">
+                                        多元通報
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> <!-- / .navbar-collapse -->
+                    </div> <!-- / .container -->
+                </nav>
+                <!-- end nav-->
+                <!-- start breadcrumb -->
+                <div>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                        <li class="breadcrumb-item"><a href="#">邊坡管理系統</a></li>
+                        <li class="breadcrumb-item active">邊坡總覽</li>
+                    </ol>
+                </div>
+                <!-- end breadcrumb -->
+                <div class="container-fluid">
+                    <div class="w-100 d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="ml-2 mt-2 text-gray-800 d-block">總覽</h4>
+                        <div class="col d-inline text-right">
+                            <a href="slope_1.html" class="btn btn-indigo m-2">
+                                    <i class="fas fa-fw fa-mountain"></i>
+                                邊坡總覽
+                            </a>                            
+                            <a href="slope_2.html" class="btn btn-indigo m-2">
+                                    <i class="fa fa-anchor"></i>地錨邊坡總覽
+                            </a>
+                            <a href="slope_3.html" class="btn btn-indigo m-2">
+                                    <i class="fa fa-pencil-ruler"></i>儀器邊坡總覽
+                            </a>                            
+                            <a href="slope_4.html" class="btn btn-indigo m-2">
+                                    <i class="fas fa-history"></i>歷史災害邊坡總覽
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- DataTales-->
+                    <div class="card shadow mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center py-0">
+                            <h5 class="m-0 text-primary font-weight-bolder">邊坡總覽
+                                <a class="btn btn-sm btn-light btn-rounded ml-3"" href="slope_detail.html">
+                                    + 新增邊坡基本資料
+                                </a>
+                            </h5>
+                            <div>
+                                <div class="float-right small ml-4 mb-2">
+                                    <form class="form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                    <div class="form-group mt-3 px-5">
+                                <div class="input-group">
+                                    <input type="search" class="form-control d-none d-sm-inline-block " placeholder="輸入里程查詢邊坡.." aria-label="Input">
+                                    <div class="input-group-append d-none d-sm-inline-block ">
+                                        <span class="btn btn-primary rounded-right"><i class="fa fa-search"></i></span>
+                                    </div>
+                                      <a class="btn btn-circle btn-sm btn-secondary ml-1 mt-1" data-toggle="modal" data-target="#filiter">
+                                        <i class="fa fa-filter mr-1"></i>
+                                    </a>
+                                </div>
+                            
+                                    </form>
+
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                            <label class="mr-2">搜尋條件:</label><span class="badge badge-pill badge-secondary mx-1">台北段</span><span class="badge badge-pill badge-secondary mx-1">縱貫線</span><span class="badge badge-pill badge-secondary mx-1">有地錨</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-light nowrap" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="thead-light font-weight-bolder">
+                                        <tr>
+                                            <th>序號</th>
+                                            <th>路線</th>
+                                            <th>軌道</th>
+                                            <th>起訖里程</th>
+                                            <th>邊坡位置</th>
+                                            <th>邊坡分級</th>
+                                            <th>邊坡分級流程狀態</th>
+                                            <th>養護單位</th>
+                                            <th>有無儀器</th>
+                                            <th>有無災害</th>
+                                            <th>有無地錨</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="slope_detail.html">1</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K47+672-K47+691</td>
+                                            <td>右側</td>
+                                            <td class="undefind text-center"><button class="btn btn-circle btn-sm btn-warning">B</button></td>
+                                            <td><a href="slope_rating.html">分級中</a></td>
+                                            <td>宜蘭工務段</td>
+                                            <td>有</td>
+                                            <td>有</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">2</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K51+118-K51+137</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-warning">B</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>有</td>
+                                            <td>有</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">3</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K50+778-K50+834</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-warning">B</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">4</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K51+012-K51+048</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-info">C</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">5</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K51+258-K51+281</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-danger">A</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">6</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K51+345-K51+394</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-success">D</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">7</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K49+627-K49+692</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-dark">X</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">8</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K49+762-K49+820</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-info">C</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="slope_detail.html">9</a></td>
+                                            <td>宜蘭線</td>
+                                            <td>西正線</td>
+                                            <td>K49+829-K49+925</td>
+                                            <td>右側</td>
+                                            <td class="text-center"><button class="btn btn-circle btn-sm btn-info">C</button></td>
+                                            <td>完成</td>
+                                            <td>宜蘭工務段</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                            <td>無</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- end Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        © Copyright <a href="#" class="current-year">中華民國台灣鐵路局</a> 版權所有 ｜ 服務電話：02-0000-0000 ｜地址：00000 台北市0000路0000000號
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
+    <a class="scroll-to-top btn-circle" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- start Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title" id="exampleModalLabel"><i class="fa fa-bell"></i>提醒</p>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body py-5 text-center">您是否確定登出此系統？！</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取 消</button>
+                    <a class="btn btn-primary" href="../login.html">登 出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Logout Modal-->
+    
+    <!-- start filiter Modal -->
+    <div class="modal fade" id="filiter" tabindex="-1" aria-labelledby="filiterLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title" id="announcementLabel"><i class="fa fa-filter"></i>條件篩選</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row p-2 mt-2">
+                        <div class="col-12 form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">工務段</label>
+                            <select class="selectpicker show-tick" data-width="100%" placeholder="請入填ＯＯＯ..." title=請入填ＯＯＯ..."">
+                                <option selected>全部</option>
+                                <option data-tokens="1">臺北段</option>
+                                <option data-tokens="2">臺中段</option>
+                                <option data-tokens="3">嘉義段</option>
+                                <option data-tokens="4">高雄段</option>
+                                <option data-tokens="5">臺東段</option>
+                                <option data-tokens="6">花蓮段</option>
+                                <option data-tokens="7">宜蘭段</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label style="min-width: 70px" class="text-dark">位置里程</label>
+                            <select class="selectpicker show-tick" placeholder="請入填ＯＯＯ..." title=請入填ＯＯＯ..."" data-width="100%">
+                                <option selected>全部</option>
+                                <option data-tokens="1">縱貫線</option>
+                                <option data-tokens="2">台中線</option>
+                                <option data-tokens="3">屏東線</option>
+                                <option data-tokens="">南迴線</option>
+                                <option data-tokens="">東 線</option>
+                                <option data-tokens="">北迴線</option>
+                                <option data-tokens="">宜蘭線</option>
+                                <option data-tokens="">成追線</option>
+                                <option data-tokens="">六家線</option>
+                                <option data-tokens="">內灣線</option>
+                                <option data-tokens="">臺中港線</option>
+                                <option data-tokens="">集集線</option>
+                                <option data-tokens="">沙崙線</option>
+                                <option data-tokens="">深澳線</option>
+                                <option data-tokens="">平溪線</option>
+                                <option data-tokens="">花蓮港線</option>
+                            </select>
+                        </div>
+                        <div class="col-12 form-group">
+                            <input type="text" value="K123+456" placeholder="請入填里程..">
+                            <span class="mx-2">～</span>
+                            <input type="text" value="K123+456" placeholder="請入填里程..">
+                        </div>
+                        <div class="col-4 form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">有無地錨</label>
+                            <select class="selectpicker show-tick" data-width="100%" placeholder="請入填ＯＯＯ..." title=請入填ＯＯＯ..."">
+                                <option selected>全部</option>
+                                <option data-tokens="1">有</option>
+                                <option data-tokens="2">無</option>
+                            </select>
+                        </div>
+                        <div class="col-4 form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">有無監測</label>
+                            <select class="selectpicker show-tick" data-width="100%" placeholder="請入填ＯＯＯ..." title=請入填ＯＯＯ..."">
+                                <option selected>全部</option>
+                                <option data-tokens="1">有</option>
+                                <option data-tokens="2">無</option>
+                            </select>
+                        </div>
+                        <div class="col-4 form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">有無歷史災害</label>
+                            <select class="selectpicker show-tick" data-width="100%" placeholder="請入填ＯＯＯ..." title=請入填ＯＯＯ..."">
+                                <option selected>全部</option>
+                                <option data-tokens="1">有</option>
+                                <option data-tokens="2">無</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">邊坡分級</label>
+                            <select class="selectpicker show-tick" data-width="100%" title="請選擇ＯＯＯ...">
+                                <option selected>全部</option>
+                                <option data-tokens="1">A</option>
+                                <option data-tokens="2">B</option>
+                                <option data-tokens="3">C</option>
+                                <option data-tokens="4">D</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label style="min-width: 70px" class="text-dark text-left">邊坡分級流程狀態</label>
+                            <select class="selectpicker show-tick" data-width="100%" title="請選擇ＯＯＯ...">
+                                <option selected>全部</option>
+                                <option data-tokens="1">分級中</option>
+                                <option data-tokens="2">完成</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">重 設</button>
+                    <button type="button" class="btn btn-primary">搜 尋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end filiter Modal -->
+
+        <script src="../assets/vendor/jquery/jquery.min.js"></script>
+        <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+         <script src="../assets/js/sidebarToggle.min.js"></script>
+        <script src="../assets/js/bootstrap-select.min.js"></script>
+        <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="../assets/js/demo/datatables-set.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
+
+</html>
