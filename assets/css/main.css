@@ -13835,7 +13835,7 @@ button:hover {
 
 @media(max-width:375px) {
     #LoginForm .card {
-    width: 100%;
+    width: 98%;
 }
     #LoginForm .card-body {
     margin: 0 auto;
